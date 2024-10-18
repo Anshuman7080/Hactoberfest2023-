@@ -21,9 +21,8 @@ public:
     }
 
     void insert(int value) {
-        Node* newNode = new Node(value);
         if (!root) {
-            root = newNode;
+            root = new Node(value);
             return;
         }
 
@@ -35,14 +34,14 @@ public:
             q.pop();
 
             if (!current->left) {
-                current->left = newNode;
+                current->left = new Node(value);
                 return;
             } else {
                 q.push(current->left);
             }
 
             if (!current->right) {
-                current->right = newNode;
+                current->right = new Node(value);
                 return;
             } else {
                 q.push(current->right);
